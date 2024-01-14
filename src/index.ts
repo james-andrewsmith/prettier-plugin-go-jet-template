@@ -1,6 +1,6 @@
 import {
   doc,
-  FastPath,
+  AstPath,
   Parser,
   ParserOptions,
   Printer,
@@ -20,23 +20,23 @@ import {
   isBlock,
   isMultiBlock,
   isRoot,
-  parseGoTemplate,
+  parseGoJetTemplate,
 } from "./parse";
 
 const htmlParser = htmlParsers.html;
-const PLUGIN_KEY = "go-template";
+const PLUGIN_KEY = "go-jet-template";
 
 type ExtendedParserOptions = ParserOptions<GoNode> &
-  PrettierPluginGoTemplateParserOptions;
+  PrettierPluginGoJetTemplateParserOptions;
 
-export type PrettierPluginGoTemplateParserOptions = {
-  goTemplateBracketSpacing: boolean;
+export type PrettierPluginGoJetTemplateParserOptions = {
+  GoJetTemplateBracketSpacing: boolean;
 };
 
 export const options: {
-  [K in keyof PrettierPluginGoTemplateParserOptions]: any;
+  [K in keyof PrettierPluginGoJetTemplateParserOptions]: any;
 } = {
-  goTemplateBracketSpacing: {
+  GoJetTemplateBracketSpacing: {
     type: "boolean",
     category: "Global",
     description:
@@ -47,7 +47,7 @@ export const options: {
 
 export const languages: SupportLanguage[] = [
   {
-    name: "GoTemplate",
+    name: "GoJetTemplate",
     parsers: [PLUGIN_KEY],
     extensions: [
       ".go.html",
@@ -58,8 +58,9 @@ export const languages: SupportLanguage[] = [
       ".tpl",
       ".html.tmpl",
       ".html.tpl",
+      ".jet"
     ],
-    vscodeLanguageIds: ["gotemplate", "gohtml", "GoTemplate", "GoHTML"],
+    vscodeLanguageIds: ["gotemplate", "gohtml", "GoJetTemplate", "GoHTML"],
   },
 ];
 export const parsers = {
@@ -68,7 +69,7 @@ export const parsers = {
     preprocess: (text) =>
       // Cut away trailing newline to normalize formatting.
       text.endsWith("\n") ? text.slice(0, text.length - 1) : text,
-    parse: parseGoTemplate,
+    parse: parseGoJetTemplate,
     locStart: (node) => node.index,
     locEnd: (node) => node.index + node.length,
   },
@@ -126,7 +127,7 @@ const embed: Exclude<Printer<GoNode>["embed"], undefined> = () => {
     const html = await textToDoc(node.aliasedContent, {
       ...options,
       parser: "html",
-      parentParser: "go-template",
+      parentParser: "go-jet-template",
     });
 
     const mapped = utils.stripTrailingHardline(
@@ -191,11 +192,11 @@ const embed: Exclude<Printer<GoNode>["embed"], undefined> = () => {
   };
 };
 
-type PrintFn = (path: FastPath<GoNode>) => builders.Doc;
+type PrintFn = (path: AstPath<GoNode>) => builders.Doc;
 
 function printMultiBlock(
   node: GoMultiBlock,
-  path: FastPath<GoNode>,
+  path: AstPath<GoNode>,
   print: PrintFn,
 ): builders.Doc {
   return [...path.map(print, "blocks")];
@@ -220,7 +221,7 @@ function isFollowedByNode(node: GoInline): boolean {
 
 function printInline(
   node: GoInline,
-  path: FastPath<GoNode>,
+  path: AstPath<GoNode>,
   options: ExtendedParserOptions,
   print: PrintFn,
 ): builders.Doc {
@@ -231,7 +232,7 @@ function printInline(
       : "";
 
   const result: builders.Doc[] = [
-    printStatement(node.statement, options.goTemplateBracketSpacing, {
+    printStatement(node.statement, options.GoJetTemplateBracketSpacing, {
       start: node.startDelimiter,
       end: node.endDelimiter,
     }),

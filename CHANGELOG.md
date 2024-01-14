@@ -1,12 +1,16 @@
 # Changelog
 
+## 0.0.16
+
+- **Forked**: This plugin is now forked from [prettier-plugin-go-template](https://github.com/NiklasPor/prettier-plugin-go-template) to support the [Jet Template Engine](https://github.com/CloudyKit/jet) syntax.
+
 ## 0.0.15
 
 - Readme update for easier setup on npm.
 
 ## 0.0.14
 
-- **Breaking Change**: Prettier support now starts at `3.0.0`. For older Prettier versions use `prettier-plugin-go-template@0.0.13` and below.
+- **Breaking Change**: Prettier support now starts at `3.0.0`. For older Prettier versions use `prettier-plugin-go-jet-template@0.0.13` and below.
 
 ## 0.0.13
 

@@ -1,0 +1,8 @@
+{{ try }}
+    we're not sure if we already initialised foo,
+    so the next line might fail...
+    {{ foo }}
+{{ catch err }}
+    {{ log(err.Error()) }}
+    uh oh, something went wrong: {{ err.Error() }}
+{{ end }}

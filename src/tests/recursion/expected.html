@@ -1,0 +1,9 @@
+{{ block menu() }}
+  <ul>
+    {{ range . }}
+      <li>
+        {{ .Text }}{{ if len(.Children) }}{{ yield menu() .Children }}{{ end }}
+      </li>
+    {{ end }}
+  </ul>
+{{ end }}

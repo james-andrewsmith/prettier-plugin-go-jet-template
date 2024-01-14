@@ -1,11 +1,13 @@
-# prettier-plugin-go-template
+# prettier-plugin-go-jet-template
 
-[![NPM Badge](https://img.shields.io/npm/v/prettier-plugin-go-template)](https://www.npmjs.com/package/prettier-plugin-go-template) [![CodeCov Badge](https://img.shields.io/codecov/c/github/niklaspor/prettier-plugin-go-template)](https://codecov.io/gh/NiklasPor/prettier-plugin-go-template) [![Contributions Badge](https://img.shields.io/github/all-contributors/niklaspor/prettier-plugin-go-template)](#contributors-)
+[![NPM Badge](https://img.shields.io/npm/v/prettier-plugin-go-jet-template)](https://www.npmjs.com/package/prettier-plugin-go-jet-template) [![CodeCov Badge](https://img.shields.io/codecov/c/github/james-andrewsmith/prettier-plugin-go-jet-template)](https://codecov.io/gh/james-andrewsmith/prettier-plugin-go-jet-template) [![Contributions Badge](https://img.shields.io/github/all-contributors/james-andrewsmith/prettier-plugin-go-jet-template)](#contributors-)
 
-Formatter plugin for go template files. The only peer dependency is [prettier](https://www.npmjs.com/package/prettier).
+Formatter plugin for [Golang Jet Engine](https://github.com/CloudyKit/jet) templates. 
+
+Forked from Niklas Portmann's [prettier-plugin-go-template](https://github.com/NiklasPor/prettier-plugin-go-template). The only peer dependency is [prettier](https://www.npmjs.com/package/prettier).
 
 ```bash
-npm install --save-dev prettier prettier-plugin-go-template
+npm install --save-dev prettier prettier-plugin-go-jet-template
 ```
 
 Starting with Prettier 3 auto-discovery has been removed. Configuration is required ⬇️
@@ -13,7 +15,7 @@ Starting with Prettier 3 auto-discovery has been removed. Configuration is requi
 ```json
 // .prettierrc
 {
-  "plugins": ["prettier-plugin-go-template"]
+  "plugins": ["prettier-plugin-go-jet-template"]
 }
 ```
 
@@ -70,13 +72,13 @@ If you want to add support for `.html` read the section on it below the examples
 </tr>
 </table>
 
-## GoHugo / `.html`
+## `.html` Extension Support
 
-To use it with GoHugo and basic `.html` files, you'll have to override the used parser inside your `.prettierrc` file:
+To use with `.html` files, you'll have to override the used parser inside your `.prettierrc` file:
 
 ```json
 {
-  "plugins": ["prettier-plugin-go-template"],
+  "plugins": ["prettier-plugin-go-jet-template"],
   "overrides": [
     {
       "files": ["*.html"],
@@ -93,7 +95,7 @@ To use it with GoHugo and basic `.html` files, you'll have to override the used 
 Make sure to always have installed **both** dependencies:
 
 - `prettier`
-- `prettier-plugin-go-template`
+- `prettier-plugin-go-jet-template`
 
 Also make sure that they are installed inside the same scope.
 Install both globally (`npm i -g`) or locally – otherwise prettier may not pick up the plugin.
@@ -110,7 +112,7 @@ Install both globally (`npm i -g`) or locally – otherwise prettier may not pic
    * E.g. {{ statement }} vs {{statement}}.
    * Default: true
    */
-  "goTemplateBracketSpacing": true
+  "GoJetTemplateBracketSpacing": true
 }
 ```
 
@@ -151,18 +153,18 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/alqu"><img src="https://avatars1.githubusercontent.com/u/12250845?v=4?s=100" width="100px;" alt=""/><br /><sub><b>alqu</b></sub></a><br /><a href="https://github.com/NiklasPor/prettier-plugin-go-template/issues?q=author%3Aalqu" title="Bug reports">🐛</a> <a href="https://github.com/NiklasPor/prettier-plugin-go-template/commits?author=alqu" title="Tests">⚠️</a> <a href="https://github.com/NiklasPor/prettier-plugin-go-template/commits?author=alqu" title="Code">💻</a></td>
-    <td align="center"><a href="https://www.gabrielmaldi.com"><img src="https://avatars3.githubusercontent.com/u/3728897?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Gabriel Monteagudo</b></sub></a><br /><a href="https://github.com/NiklasPor/prettier-plugin-go-template/issues?q=author%3Agabrielmaldi" title="Bug reports">🐛</a></td>
-    <td align="center"><a href="https://github.com/bgold0"><img src="https://avatars1.githubusercontent.com/u/4645400?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Bryan</b></sub></a><br /><a href="https://github.com/NiklasPor/prettier-plugin-go-template/issues?q=author%3Abgold0" title="Bug reports">🐛</a></td>
-    <td align="center"><a href="http://richtera.org"><img src="https://avatars2.githubusercontent.com/u/708186?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Andreas Richter</b></sub></a><br /><a href="https://github.com/NiklasPor/prettier-plugin-go-template/issues?q=author%3Arichtera" title="Bug reports">🐛</a></td>
-    <td align="center"><a href="https://noahbrenner.github.io/"><img src="https://avatars3.githubusercontent.com/u/24858379?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Noah Brenner</b></sub></a><br /><a href="https://github.com/NiklasPor/prettier-plugin-go-template/commits?author=noahbrenner" title="Code">💻</a> <a href="https://github.com/NiklasPor/prettier-plugin-go-template/commits?author=noahbrenner" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/alqu"><img src="https://avatars1.githubusercontent.com/u/12250845?v=4?s=100" width="100px;" alt=""/><br /><sub><b>alqu</b></sub></a><br /><a href="https://github.com/james-andrewsmith/prettier-plugin-go-jet-template/issues?q=author%3Aalqu" title="Bug reports">🐛</a> <a href="https://github.com/james-andrewsmith/prettier-plugin-go-jet-template/commits?author=alqu" title="Tests">⚠️</a> <a href="https://github.com/james-andrewsmith/prettier-plugin-go-jet-template/commits?author=alqu" title="Code">💻</a></td>
+    <td align="center"><a href="https://www.gabrielmaldi.com"><img src="https://avatars3.githubusercontent.com/u/3728897?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Gabriel Monteagudo</b></sub></a><br /><a href="https://github.com/james-andrewsmith/prettier-plugin-go-jet-template/issues?q=author%3Agabrielmaldi" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="https://github.com/bgold0"><img src="https://avatars1.githubusercontent.com/u/4645400?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Bryan</b></sub></a><br /><a href="https://github.com/james-andrewsmith/prettier-plugin-go-jet-template/issues?q=author%3Abgold0" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="http://richtera.org"><img src="https://avatars2.githubusercontent.com/u/708186?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Andreas Richter</b></sub></a><br /><a href="https://github.com/james-andrewsmith/prettier-plugin-go-jet-template/issues?q=author%3Arichtera" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="https://noahbrenner.github.io/"><img src="https://avatars3.githubusercontent.com/u/24858379?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Noah Brenner</b></sub></a><br /><a href="https://github.com/james-andrewsmith/prettier-plugin-go-jet-template/commits?author=noahbrenner" title="Code">💻</a> <a href="https://github.com/james-andrewsmith/prettier-plugin-go-jet-template/commits?author=noahbrenner" title="Documentation">📖</a></td>
     <td align="center"><a href="https://silverwind.io"><img src="https://avatars1.githubusercontent.com/u/115237?v=4?s=100" width="100px;" alt=""/><br /><sub><b>silverwind</b></sub></a><br /><a href="#ideas-silverwind" title="Ideas, Planning, & Feedback">🤔</a></td>
-    <td align="center"><a href="https://codeberg.org/cpence"><img src="https://avatars0.githubusercontent.com/u/297075?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Charles Pence</b></sub></a><br /><a href="https://github.com/NiklasPor/prettier-plugin-go-template/issues?q=author%3Acpence" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="https://codeberg.org/cpence"><img src="https://avatars0.githubusercontent.com/u/297075?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Charles Pence</b></sub></a><br /><a href="https://github.com/james-andrewsmith/prettier-plugin-go-jet-template/issues?q=author%3Acpence" title="Bug reports">🐛</a></td>
   </tr>
   <tr>
-    <td align="center"><a href="http://jasik.xyz"><img src="https://avatars.githubusercontent.com/u/10626596?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Caleb Jasik</b></sub></a><br /><a href="https://github.com/NiklasPor/prettier-plugin-go-template/issues?q=author%3Ajasikpark" title="Bug reports">🐛</a> <a href="https://github.com/NiklasPor/prettier-plugin-go-template/commits?author=jasikpark" title="Documentation">📖</a> <a href="#example-jasikpark" title="Examples">💡</a> <a href="#ideas-jasikpark" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-jasikpark" title="Maintenance">🚧</a> <a href="#question-jasikpark" title="Answering Questions">💬</a></td>
-    <td align="center"><a href="http://DanGold.me"><img src="https://avatars.githubusercontent.com/u/8890238?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Dan Gold</b></sub></a><br /><a href="https://github.com/NiklasPor/prettier-plugin-go-template/issues?q=author%3ALandGod" title="Bug reports">🐛</a></td>
-    <td align="center"><a href="https://mtlynch.io"><img src="https://avatars.githubusercontent.com/u/7783288?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Michael Lynch</b></sub></a><br /><a href="https://github.com/NiklasPor/prettier-plugin-go-template/issues?q=author%3Amtlynch" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="http://jasik.xyz"><img src="https://avatars.githubusercontent.com/u/10626596?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Caleb Jasik</b></sub></a><br /><a href="https://github.com/james-andrewsmith/prettier-plugin-go-jet-template/issues?q=author%3Ajasikpark" title="Bug reports">🐛</a> <a href="https://github.com/james-andrewsmith/prettier-plugin-go-jet-template/commits?author=jasikpark" title="Documentation">📖</a> <a href="#example-jasikpark" title="Examples">💡</a> <a href="#ideas-jasikpark" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-jasikpark" title="Maintenance">🚧</a> <a href="#question-jasikpark" title="Answering Questions">💬</a></td>
+    <td align="center"><a href="http://DanGold.me"><img src="https://avatars.githubusercontent.com/u/8890238?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Dan Gold</b></sub></a><br /><a href="https://github.com/james-andrewsmith/prettier-plugin-go-jet-template/issues?q=author%3ALandGod" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="https://mtlynch.io"><img src="https://avatars.githubusercontent.com/u/7783288?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Michael Lynch</b></sub></a><br /><a href="https://github.com/james-andrewsmith/prettier-plugin-go-jet-template/issues?q=author%3Amtlynch" title="Bug reports">🐛</a></td>
   </tr>
 </table>
 

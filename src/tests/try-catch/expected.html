@@ -1,0 +1,6 @@
+{{ try }}
+  we're not sure if we already initialised foo, so the next line might fail...
+  {{ foo }}
+{{ catch }}
+  foo was not initialised, this is fallback content
+{{ end }}

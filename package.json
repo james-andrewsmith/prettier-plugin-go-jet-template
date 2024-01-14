@@ -1,15 +1,15 @@
 {
-  "name": "prettier-plugin-go-template",
-  "version": "0.0.15",
-  "description": "Prettier plugin for formatting Go & GoHugo templates.",
+  "name": "prettier-plugin-go-jet-template",
+  "version": "0.0.16",
+  "description": "Prettier plugin for formatting Go Jet engine templates.",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/NiklasPor/prettier-plugin-go-template"
+    "url": "https://github.com/james-andrewsmith/prettier-plugin-go-jet-template"
   },
   "author": {
-    "name": "Niklas Portmann",
-    "email": "niklaspor@gmail.com"
+    "name": "James Andrew-Smith",
+    "email": "james-andrewsmith@me.com"
   },
   "keywords": [
     "prettier",

@@ -1,0 +1,8 @@
+{{ name := "Sarah" }}
+{{ block header() }}
+    <div class="header">
+{{ yield content }}        
+    </div>
+{{ content }}
+    <h1>Hey {{ name }}!</h1>
+{{ end }}

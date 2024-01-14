@@ -106,8 +106,8 @@
   ],
   "badgeTemplate": "",
   "contributorsPerLine": 7,
-  "projectName": "prettier-plugin-go-template",
-  "projectOwner": "NiklasPor",
+  "projectName": "prettier-plugin-go-jet-template",
+  "projectOwner": "james-andrewsmith",
   "repoType": "github",
   "repoHost": "https://github.com",
   "skipCi": true
